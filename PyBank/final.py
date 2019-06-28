@@ -31,26 +31,19 @@ with open(csvname, newline="") as budgetcsv:
 
         previous_revenue = current_revenue
 
-    #print(month_count)
 
     netTotal = sum(prolos)
-    #print(netTotal)
 
     totalChanges = sum(changes)
     averageChanges = round(totalChanges/(month_count-1),2)
-    #print(averageChanges)
 
     maxProfit = max(changes)  #max value
     maxIndex = changes.index(maxProfit)  #month index
     maxMonth = months[maxIndex]  #month value max
-    #print(maxProfit)
-    #print(maxMonth)
 
     minLoss = min(changes)  #min value
     minIndex = changes.index(minLoss)  #month index
     minMonth = months[minIndex]  #month value min
-    #print(minLoss)
-    #print(minMonth)
 
     print("Financial Analysis")
     print("-----------------------")
