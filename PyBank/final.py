@@ -45,6 +45,8 @@ with open(csvname, newline="") as budgetcsv:
     minIndex = changes.index(minLoss)  #month index
     minMonth = months[minIndex]  #month value min
 
+    results = open("results.txt","w+")
+
     print("Financial Analysis")
     print("-----------------------")
     print("Total Months: " + str(month_count))
@@ -52,3 +54,11 @@ with open(csvname, newline="") as budgetcsv:
     print("Average Change: $" + str(averageChanges))
     print("Greatest Increase in Profits: " + maxMonth + " ($" + str(maxProfit) + ")")
     print("Greatest Decrease in Profits: " + minMonth + " ($" + str(minLoss) + ")")
+
+    results.write("Financial Analysis\n")
+    results.write("-----------------------\n")
+    results.write("Total Months: " + str(month_count) + "\n")
+    results.write("Total: $" + str(netTotal) + "\n")
+    results.write("Average Change: $" + str(averageChanges) + "\n")
+    results.write("Greatest Increase in Profits: " + maxMonth + " ($" + str(maxProfit) + ")\n")
+    results.write("Greatest Decrease in Profits: " + minMonth + " ($" + str(minLoss) + ")\n")
